@@ -1,0 +1,17 @@
+<h3> Portfolio: <%= display_portfolio(@currency) %></h3>
+  <h1> Currency: <%=  @currency.name %></h1>
+  <h1> Price per: $ <%= (@currency.price_per) %></h1>
+  <h1> Amount Owned: <%= @currency.amount_owned %></h1>
+  <h1> Total: <%= number_to_currency(@currency.price_per * @currency.amount_owned) %></h1>
+
+<div>
+  <div class="panel-footer"></div>
+  <br/>
+  <%= link_to 'Edit', edit_currency_path(@currency), class: "btn btn-secondary" %> <br/>
+  <%= button_to 'Back to Portfolios', portfolios_path, class: "btn btn-secondary" %> <br/>
+  <%= button_to 'Delete', currency_path(@currency), method: :delete, class: "btn btn-danger" %>
+</div>
+
+<br>
+
+<%= link_to 'New Currency', new_currency_path, class: "btn btn-primary" %>

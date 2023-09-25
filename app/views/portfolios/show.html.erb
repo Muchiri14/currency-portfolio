@@ -1,0 +1,14 @@
+<h1><%= @portfolio.name %></h1>
+<ul>
+  <% @portfolio.currencies.each do |currency| %>
+    <li><%= link_to currency.name, currency_path(currency) %></li>
+  <% end %>
+</ul>
+
+<div>
+  <div class="panel-footer"></div>
+  <br/>
+  <%= button_to 'Edit', edit_portfolio_path(@portfolio), class: "btn btn-secondary" %> <br/>
+  <%= button_to 'Back to Portfolios', portfolios_path, class: "btn btn-secondary" %> <br/>
+  <%= button_to 'Delete', portfolio_path(@portfolio), method: :delete, class: "btn btn-danger" %>
+</div>
